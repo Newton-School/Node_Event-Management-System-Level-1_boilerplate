@@ -11,7 +11,7 @@ const registerUser = async (req, res) => {
     // 4) If the confirmpassword===password then store the document of a user
     // 5) If the confirmpassword!=password then status should be 400 with the message: Passwords do not match
   } catch (error) {
-    res.status(404).send(error);
+    res.status(500).json({ message: 'Something went wrong' });
   }
 };
 
@@ -24,7 +24,7 @@ const loginUser = async (req, res) => {
     // 4) If user email exists and password matches with the db then show a json message Successful login
     // 5) If the user Data is incorrect show a json message Invalid credentials
   } catch (error) {
-    res.status(404).send(error);
+    res.status(500).json({ message: 'Something went wrong' });
   }
 };
 
@@ -37,7 +37,7 @@ const updatePassword = async (req, res) => {
     // 4) If the password updated successfully then show updated password as a result
     // 5) If the email is not valid then show res.send('Invalid email') with status 400
   } catch (error) {
-    res.status(404).json(error);
+    res.status(500).json({ message: 'Something went wrong' });
   }
 };
 
