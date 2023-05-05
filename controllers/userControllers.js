@@ -1,5 +1,6 @@
 const users = require('../models/usermodel');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 //Registering user into database and hashing password of a user
 const registerUser = async (req, res) => {
